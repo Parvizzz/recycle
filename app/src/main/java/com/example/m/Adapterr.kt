@@ -8,7 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class Adapterr(val array :ArrayList<String>):RecyclerView.Adapter<Adapterr.MyVuewHolder>() {
+class Adapterr(val array :ArrayList<Myclass>):RecyclerView.Adapter<Adapterr.MyVuewHolder>() {
     class MyVuewHolder(item:View):RecyclerView.ViewHolder(item){
         val image: ImageView = item.findViewById(R.id.image)
         val name:TextView = item.findViewById(R.id.tex)
@@ -24,7 +24,7 @@ class Adapterr(val array :ArrayList<String>):RecyclerView.Adapter<Adapterr.MyVue
 
     override fun onBindViewHolder(holder: MyVuewHolder, position: Int) {
         holder.name.text = array[position].name
-        holder.family.text = array[position].familiya
+        holder.family.setText(array[position].familiya)
     }
 
     override fun getItemCount(): Int {
